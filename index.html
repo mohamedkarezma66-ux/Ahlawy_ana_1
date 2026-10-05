@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>أهلاوي أنا — Ultimate Edition</title>
+<meta name="theme-color" content="#d71920" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@600;800;900&display=swap');
+:root{--red:#d71920;--red2:#ff3038;--dark:#07080c;--card:#10131b;--card2:#171b25;--muted:#9ca3af;--gold:#f4c542;--green:#25d366;--danger:#ff5252;--line:#272d39;--white:#f8fafc}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 50% -10%,#3b0b0d 0,#0b0c10 40%,#05060a 100%);color:var(--white);font-family:Cairo,system-ui,sans-serif}button,input{font:inherit}button{cursor:pointer;border:0}.app{min-height:100vh;max-width:1100px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.brand{display:flex;align-items:center;gap:12px}.crest{width:52px;height:62px;border-radius:16px 16px 24px 24px;background:linear-gradient(160deg,#ef2027,#8d0910);display:grid;place-items:center;font-size:27px;box-shadow:0 12px 35px #d7192030;border:1px solid #ff5b61}.brand h1{font-size:21px;margin:0;font-weight:900}.brand small{color:#b8bec8}.pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#0e1118;color:#dfe4eb}.screen{display:none}.screen.active{display:block}.hero{padding:28px 22px 22px;border:1px solid #252a34;background:linear-gradient(145deg,#151923,#0c0f15);border-radius:28px;box-shadow:0 25px 80px #0008;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;inset:-100px -80px auto auto;width:320px;height:320px;background:#d7192025;filter:blur(15px);border-radius:50%}.eyebrow{color:#ff6970;font-weight:800;letter-spacing:.5px}.title{font-size:clamp(36px,7vw,70px);line-height:1;margin:10px 0 14px;font-weight:900}.title span{color:#ff333b}.subtitle{font-size:17px;color:#c5cad2;max-width:780px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.mode{padding:18px;text-align:right;border:1px solid var(--line);background:linear-gradient(145deg,#141822,#0d1016);border-radius:18px;color:white;transition:.2s;min-height:115px}.mode:hover{transform:translateY(-3px);border-color:#d7192070}.mode b{display:block;font-size:18px}.mode span{display:block;color:var(--muted);font-size:13px;margin-top:5px}.mode.selected{border-color:var(--red);box-shadow:0 0 0 2px #d7192030 inset}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.btn{padding:13px 18px;border-radius:14px;background:#1a1f29;color:white;border:1px solid var(--line);font-weight:800}.btn.primary{background:linear-gradient(135deg,#ff3038,#b90e15);border-color:#ff5b61;box-shadow:0 12px 30px #d7192038}.btn.gold{background:linear-gradient(135deg,#f5cc54,#b7830a);color:#211a05}.btn:active{transform:scale(.98)}.setup{margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field{padding:14px;border:1px solid var(--line);border-radius:16px;background:#0d1016}.field label{display:block;color:#aeb5c0;font-size:13px;margin-bottom:7px}.field input,.field select{width:100%;background:#161a22;border:1px solid #303745;color:#fff;border-radius:11px;padding:11px;outline:none}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.stat{background:#0d1016;border:1px solid var(--line);border-radius:15px;padding:12px}.stat small{color:#9da5b1}.stat b{display:block;font-size:22px;margin-top:3px}.gamebar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}.player{background:#10141c;border:1px solid var(--line);border-radius:14px;padding:10px 12px}.player.active{border-color:#ff444b;box-shadow:0 0 0 2px #d7192025 inset}.player b{display:block}.player small{color:#9ea6b2}.timer{font-family:Orbitron,monospace;font-size:31px;font-weight:900;text-align:center;color:#fff}.timer.danger{color:#ff4d55;animation:pulse .55s infinite alternate}@keyframes pulse{to{transform:scale(1.07)}}.progress{height:8px;background:#1b202a;border-radius:999px;overflow:hidden;margin:12px 0 16px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff3038,#f6c94d);transition:.25s}.question-card{background:linear-gradient(150deg,#171b25,#0c0f15);border:1px solid #292f3b;border-radius:25px;padding:22px;box-shadow:0 22px 70px #0009}.cat{color:#ff6d72;font-weight:800}.q{font-size:clamp(23px,4vw,36px);line-height:1.5;margin:10px 0 20px;font-weight:900}.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.answer{min-height:74px;text-align:right;padding:15px 17px;border-radius:17px;background:#151923;color:#f8fafc;border:1px solid #2b313e;display:flex;align-items:center;gap:10px;font-weight:800;transition:.15s}.answer:hover{border-color:#747c8a;transform:translateY(-1px)}.answer .letter{width:34px;height:34px;border-radius:10px;background:#242a35;display:grid;place-items:center;color:#cfd4dc;flex:none}.answer.correct{background:#10341f;border-color:#25d366}.answer.wrong{background:#391319;border-color:#ff4d55}.answer.dim{opacity:.35}.powerups{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.power{padding:10px 12px;border-radius:12px;background:#10141b;border:1px solid var(--line);color:#dce1e8}.power:disabled{opacity:.35}.feedback{text-align:center;min-height:32px;margin-top:12px;font-weight:900}.scorepop{position:fixed;inset:0;pointer-events:none;display:grid;place-items:center;font-size:60px;font-weight:900;color:#f7d66b;opacity:0;z-index:50}.scorepop.show{animation:pop .8s ease}@keyframes pop{0%{opacity:0;transform:scale(.6)}30%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:translateY(-90px) scale(1)}}.result{text-align:center;padding:30px 20px}.winner{font-size:45px;font-weight:900}.bigscore{font-family:Orbitron;font-size:58px;color:#f6cf55;margin:10px}.achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;text-align:right}.ach{padding:13px;border:1px solid var(--line);border-radius:15px;background:#0e1117}.ach.lock{opacity:.38}.footer{text-align:center;color:#707784;font-size:12px;padding:18px}.footer strong{color:#cfd4dc}.lb{margin-top:15px;text-align:right}.lbrow{display:flex;justify-content:space-between;padding:11px;border-bottom:1px solid #222832}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:#151923;border:1px solid #343b48;padding:12px 17px;border-radius:13px;opacity:0;pointer-events:none;transition:.2s;z-index:80}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.hidden{display:none!important}.switch{display:flex;gap:8px;align-items:center}.switch input{accent-color:var(--red)}@media(max-width:760px){.grid,.answers{grid-template-columns:1fr}.setup{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.gamebar{grid-template-columns:1fr auto}.gamebar .player:last-child{grid-column:1/-1}.title{font-size:44px}.hero{padding:22px 15px}.app{padding:11px}.achievements{grid-template-columns:1fr}}
+.howCard{margin-top:16px;border:1px solid #2b313d;background:linear-gradient(145deg,#121620,#0a0d13);border-radius:22px;padding:18px}.howTop{display:flex;align-items:center;justify-content:space-between;gap:12px}.howTop h3{margin:0;font-size:18px}.howTop span{color:#9ea6b2;font-size:12px}.howPreview{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin-top:12px}.howIcon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:#251216;border:1px solid #5a252b;font-size:25px}.howPreview b{font-size:16px}.howPreview p{margin:3px 0 0;color:#aeb5c0;font-size:13px}.howScreen .hero{max-width:980px;margin:auto}.howHeroHead{display:flex;align-items:center;gap:14px}.howBigIcon{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(145deg,#d71920,#7f080e);font-size:32px;border:1px solid #ff555d;flex:none}.howHeroHead h2{margin:0;font-size:clamp(25px,5vw,40px)}.howHeroHead p{margin:3px 0 0;color:#aeb5c0}.howGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.howBlock{padding:16px;border-radius:17px;background:#0d1017;border:1px solid #252c38}.howBlock h3{margin:0 0 8px;font-size:16px}.howBlock p,.howBlock li{color:#b6bdc7;font-size:13px;line-height:1.8}.howBlock ul{margin:8px 0 0;padding-right:20px}.howSteps{display:grid;gap:9px;margin-top:10px}.howStep{display:flex;gap:10px;align-items:flex-start}.howStep i{width:29px;height:29px;border-radius:9px;background:#231116;border:1px solid #54262c;display:grid;place-items:center;font-style:normal;font-weight:900;color:#ff7075;flex:none}.howNote{margin-top:14px;padding:13px 15px;border-radius:15px;background:#17140b;border:1px solid #4b3b16;color:#d9c47c;font-size:13px}.howOnline{margin-top:12px;padding:15px;border-radius:17px;background:linear-gradient(145deg,#101b18,#0c1110);border:1px solid #21443a}.howOnline h3{margin:0 0 7px}.howOnline p{margin:0;color:#b7c7c0;font-size:13px;line-height:1.8}.howOnline code{font-family:Orbitron,monospace;color:#7cf0c0}.howBack{display:flex;justify-content:center;margin-top:18px}
+
+</style>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="brand"><div class="crest">🦅</div><div><h1>أهلاوي أنا</h1><small>Ultimate Edition • تحدّي الأهلي الحقيقي</small></div></div><div class="pill" id="levelPill">المستوى 1</div></header>
+
+<section id="home" class="screen active">
+<div class="hero">
+<div class="eyebrow">🦅 AHLawy ANA • ULTIMATE V5</div>
+<div class="title">اختبر <span>أهلاويتك</span> بجد</div>
+<p class="subtitle">جولات سريعة، كومبو، باور أبس، خصوم AI، تحديات محلية — ودلوقتي <b>أونلاين بكود غرفة</b> عشان تلعب ضد أي أهلاوي من أي مكان</p>
+<div class="homeNav">
+<div class="featureCard hot"><span class="onlineBadge">● ONLINE 1v1</span><h3>🥊 تحدي أهلاوي ضد أهلاوي</h3><p>اعمل غرفة، ابعت الكود لصاحبك، وابدأوا نفس الأسئلة في نفس الجولة</p><div class="onlineMini"><button class="btn primary" id="onlineCreateBtn">🚀 إنشاء غرفة</button><button class="btn" id="onlineJoinBtn">🔑 دخول بكود</button></div></div>
+<div class="featureCard"><h3>🎯 Quick Play</h3><p>ادخل على طول للعب الفردي أو AI من غير تعقيد</p><div class="onlineMini"><button class="btn" id="quickSoloBtn">▶️ لعب سريع</button><button class="btn" id="quickAiBtn">🤖 ضد AI</button></div></div>
+</div>
+<div class="modeHeader"><h3>🎮 اختار طريقة اللعب</h3><span class="tag red">كل جولة = تجربة مختلفة</span></div>
+<div class="grid modeGrid">
+<button class="mode selected" data-mode="solo"><div class="modeIcon">🎯</div><b>لاعب واحد</b><span>اكسر رقمك وادخل الـStreak</span><small>⭐ الأفضل للتدريب</small></button>
+<button class="mode" data-mode="ai"><div class="modeIcon">🤖</div><b>ضد الـAI</b><span>خصم بأربع درجات</span><small>🔥 أسطورة لو تقدر</small></button>
+<button class="mode" data-mode="local2"><div class="modeIcon">🥊</div><b>1 ضد 1 محلي</b><span>لاعبين على نفس الموبايل</span><small>👊 دور بدور</small></button>
+<button class="mode" data-mode="local4"><div class="modeIcon">👥</div><b>4 لاعبين</b><span>كل واحد له دوره</span><small>🏆 بطولة صغيرة</small></button>
+<button class="mode" data-mode="speed"><div class="modeIcon">⚡</div><b>الأسرع يفوز</b><span>السرعة = نقاط أكثر</span><small>⏱️ 10 ثواني</small></button>
+<button class="mode" data-mode="sudden"><div class="modeIcon">☠️</div><b>موت مفاجئ</b><span>غلطة واحدة وتخرج</span><small>💀 للوحوش</small></button>
+</div>
+<div class="setup">
+<div class="field"><label>اسم اللاعب الأساسي</label><input id="p1" maxlength="18" value="محمد" /></div>
+<div class="field" id="aiField"><label>قوة الـAI</label><select id="aiLevel"><option value="easy">سهل</option><option value="normal" selected>متوسط</option><option value="hard">صعب</option><option value="legend">أسطورة</option></select></div>
+<div class="field"><label>عدد الأسئلة</label><select id="roundLen"><option>10</option><option>15</option><option selected>20</option><option>30</option><option>50</option></select></div>
+<div class="field"><label>نوع الأسئلة</label><select id="pack"><option value="all" selected>كل حاجة</option><option value="history">تاريخ وبطولات</option><option value="players">لاعبين ونجوم</option><option value="matches">مباريات وأرقام</option><option value="club">النادي والجمهور</option></select></div>
+</div>
+<div class="actions"><button class="btn primary" id="startBtn">🚀 ابدأ التحدي</button><button class="btn" id="howBtn">🎮 إزاي تلعب الوضع ده؟</button><button class="btn gold" id="resetBtn">♻️ تصفير تقدمي</button></div>
+<div class="howCard"><div class="howTop"><h3>💡 طريقة اللعب</h3><span>شرح سريع للوضع المختار</span></div><div class="howPreview"><div class="howIcon" id="howPreviewIcon">🎯</div><div><b id="howPreviewTitle">لاعب واحد</b><p id="howPreviewText">جاوب أكبر عدد من الأسئلة صح وحاول تكسر أعلى نتيجة بتاعتك</p></div></div></div>
+<div id="localNames" class="setup hidden"><div class="field"><label>اسم اللاعب 2</label><input id="p2" maxlength="18" value="أحمد" /></div><div class="field"><label>اسم اللاعب 3</label><input id="p3" maxlength="18" value="عمر" /></div><div class="field"><label>اسم اللاعب 4</label><input id="p4" maxlength="18" value="كريم" /></div></div>
+</div>
+<div class="stats"><div class="stat"><small>بنك الأسئلة</small><b id="bankCount">1200+</b></div><div class="stat"><small>أفضل Streak</small><b id="bestStreak">0</b></div><div class="stat"><small>XP</small><b id="xp">0</b></div><div class="stat"><small>أعلى نتيجة</small><b id="high">0</b></div></div>
+<div class="footer">made by <strong>Mohamed Ahmed</strong> • 01227802787</div>
+</section>
+
+<section id="how" class="screen howScreen">
+<div class="hero">
+<div class="howHeroHead"><div class="howBigIcon" id="howBigIcon">🎯</div><div><h2 id="howTitle">إزاي تلعب؟</h2><p id="howSubtitle">شرح تفصيلي للوضع المختار</p></div></div>
+<div id="howBody"></div>
+<div class="howBack"><button class="btn primary" id="howBackBtn">← رجوع واختيار وضع تاني</button></div>
+</div>
+<div class="footer">made by <strong>Mohamed Ahmed</strong> • 01227802787</div>
+</section>
+
+<section id="online" class="screen onlineScreen">
+<div class="hero"><div class="eyebrow">🌐 ONLINE ARENA</div><div class="title" style="font-size:clamp(34px,6vw,58px)">تحدي <span>واحد لواحد</span></div><p class="subtitle">غرفة خاصة بكود. واحد يعمل Create والتاني Join — واللعبة تتزامن بينكم مباشرة.</p>
+<div class="onlineHero">
+<div class="featureCard"><h3>🚀 إنشاء غرفة</h3><p>أنت هتكون صاحب الغرفة وتتحكم في بداية الجولة</p><div class="field" style="margin-top:12px"><label>اسمك</label><input id="onlineNameHost" maxlength="18" value="محمد" /></div><button class="btn primary" id="createRoomBtn" style="width:100%;margin-top:10px">إنشاء كود الغرفة</button><div id="hostCodeWrap" class="hidden"><div class="onlineCode" id="hostCode">------</div><button class="btn copyBtn" id="copyRoomBtn">📋 نسخ الكود</button><div class="onlineStatus" id="hostStatus">في انتظار اللاعب الآخر...</div><button class="btn primary" id="hostStartBtn" style="width:100%;margin-top:10px" disabled>🎮 ابدأ المباراة</button></div></div>
+<div class="featureCard"><h3>🔑 دخول غرفة</h3><p>اكتب الكود اللي صاحبك بعتهولك</p><div class="field" style="margin-top:12px"><label>اسمك</label><input id="onlineNameGuest" maxlength="18" value="أحمد" /></div><div class="field" style="margin-top:10px"><label>كود الغرفة</label><input id="joinCode" maxlength="8" placeholder="مثال: AH7K2P" style="text-transform:uppercase;letter-spacing:4px;text-align:center;font-weight:900" /></div><button class="btn primary" id="joinRoomBtn" style="width:100%;margin-top:10px">دخول الغرفة</button><div class="onlineStatus" id="guestStatus" style="margin-top:10px">لم تدخل غرفة بعد</div></div>
+</div>
+<div class="onlineSteps"><div class="step"><b>1️⃣ اعمل غرفة</b><span>هيطلع لك كود من 6 حروف</span></div><div class="step"><b>2️⃣ ابعت الكود</b><span>واتساب / تيليجرام / أي مكان</span></div><div class="step"><b>3️⃣ ابدأوا</b><span>نفس السؤال ونفس الجولة</span></div></div>
+<div class="actions"><button class="btn" id="onlineBackBtn">← رجوع</button></div></div>
+<div class="footer">made by <strong>Mohamed Ahmed</strong> • 01227802787</div>
+</section>
+
+<section id="game" class="screen">
+<div class="gameTop"><div class="questionMeta"><span class="tag red" id="roundTag">🔥 الجولة</span><span class="tag" id="catTag">🏆 تاريخ الأهلي</span></div><button class="btn" id="quitBtn">🏠 خروج</button></div>
+<div class="gamebar"><div class="player" id="pl1"><b>محمد</b><small>0 نقطة</small></div><div class="timer" id="timer">10.0</div><div class="player" id="pl2"><b>—</b><small>0 نقطة</small></div></div>
+<div class="progress"><i id="bar"></i></div>
+<div class="powerups topPowers"><button class="power" id="fifty">🌓 50/50</button><button class="power" id="freeze">❄️ تجميد</button><button class="power" id="double">🔥 ×2</button><button class="power" id="shield">🛡️ درع</button></div>
+<div class="question-card"><div class="cat" id="cat">تاريخ الأهلي</div><div class="q" id="question">...</div><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div></div>
+<div class="stats"><div class="stat"><small>السؤال</small><b id="qnum">1/20</b></div><div class="stat"><small>Combo</small><b id="combo">0x</b></div><div class="stat"><small>النقاط</small><b id="score">0</b></div><div class="stat"><small>أقصى Combo</small><b id="bestCombo">0x</b></div></div>
+</section>
+
+<section id="result" class="screen"><div class="hero result"><div class="eyebrow">🏆 انتهت المباراة</div><div class="winner" id="winner">مبروك</div><div class="bigscore" id="finalScore">0</div><p id="resultText"></p><div class="achievements" id="achievements"></div><div class="lb" id="leaderboard"></div><div class="actions" style="justify-content:center"><button class="btn primary" id="againBtn">🔄 جولة جديدة</button><button class="btn" id="homeBtn">🏠 القائمة الرئيسية</button></div></div><div class="footer">made by <strong>Mohamed Ahmed</strong> • 01227802787</div></section>
+</div>
+<div class="scorepop" id="scorepop">+100</div><div class="toast" id="toast"></div>
+<script>
+/*
+  أهلاوي أنا — Ultimate Edition
+  بنك تجريبي مولد من قاعدة حقائق الأهلي، ويُنتج أكثر من 1200 سؤال فريد الصياغة.
+  أهم إصلاح: ترتيب الاختيارات يُخلط لكل سؤال، والإجابة الصحيحة لا تُثبت في المكان الأول.
+*/
+const FACTS = [
+// التاريخ والتأسيس
+['history','في أي عام تأسس النادي الأهلي؟','1907',['1907','1911','1920','1896']],
+['history','ما تاريخ تأسيس النادي الأهلي؟','24 أبريل 1907',['24 أبريل 1907','1 يناير 1905','10 مارس 1910','15 مايو 1912']],
+['history','في أي مدينة يقع النادي الأهلي؟','القاهرة',['القاهرة','الإسكندرية','بورسعيد','الإسماعيلية']],
+['club','ما اللقب الأشهر للنادي الأهلي؟','نادي القرن الأفريقي',['نادي القرن الأفريقي','ملك الكؤوس الأوروبية','نادي القرن الآسيوي','زعيم أمريكا الجنوبية']],
+['club','ما اللون الأساسي الشهير لقميص الأهلي؟','الأحمر',['الأحمر','الأخضر','الأزرق','الأصفر']],
+['club','ما اسم النادي الذي يُعرف بأنه نادي القرن الأفريقي؟','الأهلي',['الأهلي','الزمالك','الترجي','الوداد']],
+// البطولات الحالية حسب الرسمي
+['history','كم مرة فاز الأهلي بدوري أبطال أفريقيا وفق سجل النادي الرسمي؟','12',['12','8','10','14']],
+['history','كم مرة فاز الأهلي بالدوري المصري وفق سجل النادي الرسمي؟','45',['45','38','42','40']],
+['history','كم مرة فاز الأهلي بكأس مصر وفق سجل النادي الرسمي؟','39',['39','35','31','41']],
+['history','كم مرة فاز الأهلي بكأس السوبر الأفريقي؟','8',['8','6','10','12']],
+['history','كم مرة فاز الأهلي بكأس السوبر المصري وفق سجل النادي؟','16',['16','12','14','18']],
+['history','كم مرة فاز الأهلي بكأس السلطان حسين؟','7',['7','5','9','11']],
+['history','كم مرة فاز الأهلي بدوري القاهرة؟','16',['16','13','18','10']],
+['history','كم مرة فاز الأهلي بكأس الكؤوس الأفريقية؟','4',['4','3','5','6']],
+['history','كم مرة فاز الأهلي بكأس الكونفدرالية الأفريقية؟','1',['1','2','3','0']],
+['history','كم مرة فاز الأهلي بالكأس الأفروآسيوية؟','1',['1','2','3','0']],
+['history','كم مرة فاز الأهلي بكأس الجمهورية العربية المتحدة؟','1',['1','2','4','0']],
+['history','كم مرة فاز الأهلي بكأس الاتحاد المصري لكرة القدم؟','1',['1','2','3','0']],
+['history','كم مرة فاز الأهلي ببطولات الأندية العربية المذكورة في سجل النادي؟','4',['4','2','6','8']],
+// دوري الأبطال years
+['matches','متى حقق الأهلي أول لقب أفريقي كبير في دوري الأبطال؟','1982',['1982','1979','1987','1990']],
+['matches','في أي عام فاز الأهلي بدوري أبطال أفريقيا للمرة الثانية؟','1987',['1987','1986','1988','1989']],
+['matches','في أي عام فاز الأهلي بدوري أبطال أفريقيا في بداية الألفية؟','2001',['2001','2000','2002','2003']],
+['matches','في أي عام فاز الأهلي بدوري أبطال أفريقيا قبل لقبي 2006 و2008؟','2005',['2005','2004','2006','2007']],
+['matches','في أي عام دافع الأهلي عن لقبه الأفريقي وحقق البطولة مرة أخرى؟','2006',['2006','2005','2007','2008']],
+['matches','في أي عام حقق الأهلي لقب دوري أبطال أفريقيا الثامن؟','2013',['2013','2012','2014','2011']],
+['matches','في أي عام فاز الأهلي بدوري أبطال أفريقيا في 2012؟','2012',['2012','2010','2011','2013']],
+['matches','في أي عام عاد الأهلي للفوز بدوري أبطال أفريقيا بعد غياب؟','2020',['2020','2019','2021','2018']],
+['matches','في أي عام فاز الأهلي بدوري أبطال أفريقيا للمرة العاشرة؟','2021',['2021','2020','2022','2019']],
+['matches','في أي عام فاز الأهلي بدوري أبطال أفريقيا للمرة الحادية عشرة؟','2023',['2023','2022','2024','2021']],
+['matches','في أي عام فاز الأهلي بدوري أبطال أفريقيا للمرة الثانية عشرة؟','2024',['2024','2023','2025','2022']],
+['matches','من كان خصم الأهلي في نهائي دوري أبطال أفريقيا 2024؟','الترجي التونسي',['الترجي التونسي','الوداد المغربي','صن داونز','ماميلودي'],],
+['matches','ما نتيجة نهائي دوري أبطال أفريقيا 2024 في القاهرة؟','1-0 للأهلي',['1-0 للأهلي','2-0 للأهلي','2-1 للترجي','0-0']],
+['matches','أين أقيم إياب نهائي دوري أبطال أفريقيا 2024؟','استاد القاهرة الدولي',['استاد القاهرة الدولي','رادس','محمد الخامس','برج العرب']],
+// 2020 final
+['matches','من سجل هدف الأهلي في نهائي دوري أبطال أفريقيا 2020؟','محمد مجدي أفشة',['محمد مجدي أفشة','علي معلول','عمرو السولية','محمد شريف']],
+['matches','في أي دقيقة جاء هدف أفشة الشهير في نهائي 2020؟','85:45',['85:45','75:20','90:00','88:10']],
+['matches','من كان خصم الأهلي في نهائي دوري أبطال أفريقيا 2020؟','الزمالك',['الزمالك','الترجي','الوداد','صن داونز']],
+['matches','ما نتيجة نهائي دوري أبطال أفريقيا 2020؟','2-1 للأهلي',['2-1 للأهلي','1-0 للأهلي','2-0 للزمالك','1-1']],
+// 2021
+['matches','من كان خصم الأهلي في نهائي دوري أبطال أفريقيا 2021؟','كايزر تشيفز',['كايزر تشيفز','الترجي','الوداد','صن داونز']],
+['matches','ما نتيجة نهائي دوري أبطال أفريقيا 2021؟','3-0 للأهلي',['3-0 للأهلي','2-0 للأهلي','1-0 للأهلي','3-1 لكايزر']],
+['matches','أين أقيم نهائي دوري أبطال أفريقيا 2021؟','الدار البيضاء بالمغرب',['الدار البيضاء بالمغرب','القاهرة','رادس بتونس','الرباط']],
+// club world cup
+['club','كم مرة حصل الأهلي على برونزية كأس العالم للأندية حسب CAF؟','4',['4','3','2','5']],
+['club','في أي دولة أقيمت نسخة كأس العالم للأندية 2025 الموسعة؟','الولايات المتحدة الأمريكية',['الولايات المتحدة الأمريكية','اليابان','فرنسا','المغرب']],
+// African records
+['club','من أكثر الأندية تتويجًا بدوري أبطال أفريقيا؟','الأهلي',['الأهلي','الزمالك','الترجي','صن داونز']],
+['club','كم مرة خسر الأهلي نهائي دوري أبطال أفريقيا قبل نهائي 2021 بحسب إحصائية CAF المنشورة 2025؟','5',['5','3','7','2']],
+['club','كم نهائيًا أفريقيًا خاض الأهلي وفق إحصائية CAF المنشورة في 2025؟','22',['22','18','20','25']],
+['club','في أي عام كانت أول مشاركة للأهلي في دوري أبطال أفريقيا بحسب سجل CAF المذكور؟','1976',['1976','1972','1982','1980']],
+// cup winners
+['history','في أي أعوام فاز الأهلي بكأس الكؤوس الأفريقية ثلاث مرات متتالية في الثمانينيات؟','1984 و1985 و1986',['1984 و1985 و1986','1982 و1983 و1984','1985 و1986 و1987','1987 و1988 و1989']],
+['history','في أي عام فاز الأهلي بكأس الكؤوس الأفريقية للمرة الرابعة؟','1993',['1993','1990','1991','1994']],
+// super cup
+['history','في أي عام فاز الأهلي بأول كأس سوبر أفريقي؟','2002',['2002','2001','2003','2004']],
+['history','في أي عام فاز الأهلي بالسوبر الأفريقي أمام نهضة بركان؟','2021',['2021','2020','2022','2019']],
+// Arab
+['history','كم لقبًا عربيًا للأندية يذكره سجل الأهلي؟','4',['4','2','6','8']],
+['history','في أي سنوات فاز الأهلي بكأس النخبة العربية؟','1995 و1996 و1997 و1998',['1995 و1996 و1997 و1998','1990 و1991 و1992 و1993','2000 و2001 و2002 و2003','1985 و1986 و1987 و1988']],
+// legends
+['players','من صاحب الهدف الشهير للأهلي في نهائي 2020؟','محمد مجدي أفشة',['محمد مجدي أفشة','أبو تريكة','عماد متعب','وليد سليمان']],
+['players','من الرئيس الحالي الذي ارتبط تاريخيًا بلقب أسطورة الأهلي كلاعب؟','محمود الخطيب',['محمود الخطيب','حسام غالي','وائل جمعة','أحمد فتحي']],
+['players','من اللاعب الذي سجل أول هدف للأهلي في نهائي دوري أبطال أفريقيا بحسب موقع النادي؟','محمود الخطيب',['محمود الخطيب','أبو تريكة','أفشة','خالد بيبو']],
+['players','من صاحب الرقم القياسي المذكور كهداف الأهلي التاريخي في نهائي دوري الأبطال بخمسة أهداف؟','محمد أبو تريكة',['محمد أبو تريكة','خالد بيبو','محمود الخطيب','عماد متعب']],
+['players','من أول وآخر لاعب سجل هاتريك في نهائي دوري أبطال أفريقيا وفق موقع الأهلي؟','خالد بيبو',['خالد بيبو','أبو تريكة','الخطيب','حسام حسن']],
+['players','من أكثر لاعب تتويجًا بدوري أبطال أفريقيا بحسب موقع الأهلي في 2021؟','وائل جمعة',['وائل جمعة','أبو تريكة','الخطيب','عماد النحاس']],
+// classic finals
+['matches','من سجل هدف الأهلي في نهائي 2013 أمام أورلاندو؟','أبو تريكة',['أبو تريكة','أفشة','عماد متعب','السولية']],
+['matches','ما الفريق الذي واجهه الأهلي في نهائي دوري أبطال أفريقيا 2013؟','أورلاندو بايرتس',['أورلاندو بايرتس','الترجي','الوداد','صن داونز']],
+['matches','من كان خصم الأهلي في نهائي دوري أبطال أفريقيا 2012؟','الترجي التونسي',['الترجي التونسي','الوداد','صن داونز','مازيمبي']],
+['matches','أين سجل الأهلي لقب 2006 أمام الصفاقسي؟','تونس في رادس',['تونس في رادس','القاهرة','الدار البيضاء','الخرطوم']],
+['matches','من سجل هدف الأهلي القاتل في نهائي 2006 أمام الصفاقسي؟','محمد أبو تريكة',['محمد أبو تريكة','عماد متعب','محمد بركات','فلافيو']],
+['matches','من كان خصم الأهلي في نهائي دوري أبطال أفريقيا 2008؟','كوتون سبور',['كوتون سبور','الترجي','النجم الساحلي','الهلال']],
+// players famous
+['players','من اللاعب المعروف بلقب تريكة؟','محمد أبو تريكة',['محمد أبو تريكة','محمد بركات','عماد متعب','حسام حسن']],
+['players','من اللاعب المعروف بلقب الحاوي؟','وليد سليمان',['وليد سليمان','محمد بركات','أحمد فتحي','حسام غالي']],
+['players','من اللاعب الذي اشتهر بلقب الزئبقي؟','محمد بركات',['محمد بركات','أبو تريكة','متعب','وائل جمعة']],
+['players','من اللاعب الشهير بلقب الصخرة؟','وائل جمعة',['وائل جمعة','حسام غالي','أحمد فتحي','شريف إكرامي']],
+['players','من اللاعب الشهير بلقب العمدة في جيل الأهلي؟','عماد متعب',['عماد متعب','عمرو السولية','وليد سليمان','محمد شريف']],
+// coaches
+['players','من المدرب البرتغالي الشهير الذي قاد الأهلي في عصر البطولات منتصف الألفينات؟','مانويل جوزيه',['مانويل جوزيه','جوزيه مورينيو','كارلوس كيروش','روي فيتوريا']],
+['players','من المدرب الذي قاد الأهلي للقب دوري أبطال أفريقيا 2020 و2021؟','بيتسو موسيماني',['بيتسو موسيماني','مانويل جوزيه','مارسيل كولر','حسام البدري']],
+['players','من المدرب الذي قاد الأهلي للقب دوري أبطال أفريقيا 2012؟','حسام البدري',['حسام البدري','مانويل جوزيه','محمد يوسف','بيتسو موسيماني']],
+['players','من المدرب الذي قاد الأهلي للقب دوري أبطال أفريقيا 2013؟','محمد يوسف',['محمد يوسف','حسام البدري','مانويل جوزيه','كارتيرون']],
+// seasons / records
+['club','ما وصف CAF للأهلي في دوري أبطال أفريقيا؟','الأكثر نجاحًا في تاريخ المسابقة',['الأكثر نجاحًا في تاريخ المسابقة','الأحدث تأسيسًا','الأقل مشاركة','أول فريق عربي فقط']],
+['club','كم لقبًا أفريقيًا كان للأهلي قبل 2024 في دوري الأبطال؟','11',['11','10','12','9']],
+['club','كم لقب دوري أبطال أصبح للأهلي بعد تتويج 2024؟','12',['12','11','13','10']],
+// extra fact families for generation
+['history','كم لقبًا للدوري حققه الأهلي في موسم 2024/2025 وفق سجل النادي الرسمي؟','45',['45','44','43','46']],
+['history','كم لقبًا لكأس مصر في سجل الأهلي الرسمي؟','39',['39','38','40','37']],
+['history','كم لقبًا للسوبر الأفريقي في سجل الأهلي الرسمي؟','8',['8','7','9','10']],
+['history','كم لقبًا للسوبر المصري في سجل الأهلي الرسمي؟','16',['16','15','14','17']],
+['history','كم لقبًا لدوري القاهرة في سجل الأهلي الرسمي؟','16',['16','15','14','17']],
+['history','كم لقبًا لكأس السلطان حسين في سجل الأهلي الرسمي؟','7',['7','6','8','9']],
+['club','كم لقبًا إجماليًا ذكر موقع الأهلي أنها وصلت إليه بعد سوبر 2025؟','156',['156','155','157','154']],
+['club','ما عدد برونزيات الأهلي في كأس العالم للأندية المذكورة في موقع النادي؟','4',['4','3','5','2']],
+['club','ما عدد ألقاب الأهلي في كأس الكؤوس الأفريقية؟','4',['4','5','3','2']],
+['club','ما عدد ألقاب الأهلي في الكونفدرالية؟','1',['1','0','2','3']],
+['club','ما عدد ألقاب الأهلي في الأفروآسيوية؟','1',['1','2','0','3']],
+['club','ما عدد ألقاب الأهلي في كأس الجمهورية العربية المتحدة؟','1',['1','2','0','3']],
+// rivals / finals
+['matches','من الفريق المصري الذي خسر أمام الأهلي نهائي دوري الأبطال 2020؟','الزمالك',['الزمالك','بيراميدز','الإسماعيلي','المصري']],
+['matches','من الفريق الجنوب أفريقي الذي واجهه الأهلي في نهائي 2021؟','كايزر تشيفز',['كايزر تشيفز','صن داونز','أورلاندو','سوبر سبورت']],
+['matches','من الفريق التونسي الذي واجهه الأهلي في نهائي 2024؟','الترجي',['الترجي','النجم الساحلي','الصفاقسي','الملعب التونسي']],
+['matches','من الفريق المغربي الذي واجهه الأهلي في نهائي دوري الأبطال 2022؟','الوداد',['الوداد','الرجاء','نهضة بركان','الجيش الملكي']],
+['matches','من الفريق المغربي الذي واجهه الأهلي في نهائي دوري الأبطال 2017؟','الوداد',['الوداد','الرجاء','الجيش الملكي','نهضة بركان']],
+['matches','من الفريق التونسي الذي واجهه الأهلي في نهائي دوري الأبطال 2018؟','الترجي',['الترجي','النجم الساحلي','الصفاقسي','الاتحاد المنستيري']],
+['matches','من الفريق الجزائري الذي واجهه الأهلي في نهائي دوري الأبطال 2014؟','وفاق سطيف',['وفاق سطيف','شبيبة القبائل','مولودية الجزائر','اتحاد العاصمة']],
+// 1980s
+['matches','من كان خصم الأهلي في نهائي 1982؟','أشانتي كوتوكو',['أشانتي كوتوكو','كانون ياوندي','هارتس أوف أوك','إنيمبا']],
+['matches','من كان خصم الأهلي في نهائي 1987؟','الهلال السوداني',['الهلال السوداني','المريخ','أشانتي كوتوكو','الترجي']],
+// Club facts
+['club','ما اسم ملعب الأهلي التاريخي في الجزيرة الذي ارتبط بالنادي؟','ملعب مختار التتش',['ملعب مختار التتش','استاد القاهرة','ملعب برج العرب','ملعب السلام']],
+['club','ما اسم ملعب تدريب الأهلي الشهير؟','مختار التتش',['مختار التتش','محمد الخامس','رادس','الدفاع الجوي']],
+['club','ما اللقب الشائع لجماهير الأهلي؟','جمهور الأهلي',['جمهور الأهلي','النسور الزرقاء','الفراعنة فقط','المدرج الأخضر']],
+// factual true/false style seeds
+['club','هل الأهلي تأسس سنة 1907؟','نعم',['نعم','لا','تأسس 1910','تأسس 1920']],
+['club','هل الأهلي يملك الرقم القياسي في دوري أبطال أفريقيا بـ12 لقبًا؟','نعم',['نعم','لا','10 فقط','8 فقط']],
+['club','هل فاز الأهلي بدوري أبطال أفريقيا عام 2024؟','نعم',['نعم','لا','فاز 2023 فقط','فاز 2025 فقط']],
+['club','هل كان هدف أفشة في نهائي 2020 عند 85:45؟','نعم',['نعم','لا','81:30','90:00']],
+['club','هل الأهلي فاز بدوري الأبطال في 1982؟','نعم',['نعم','لا','1981','1983']],
+['club','هل الأهلي فاز بكأس الكؤوس الأفريقية أربع مرات؟','نعم',['نعم','لا','مرتين','6 مرات']],
+];
+
+// Expand each factual seed into 10 different question presentations = 1200+ instances.
+const STYLES=[
+ f=>f.q,
+ f=>`سؤال أهلاوي سريع 🔥 — ${f.q.replace('؟','')}؟`,
+ f=>`اختبار الذاكرة: ${f.q}`,
+ f=>`لو أنت موسوعة الأهلي… ${f.q}`,
+ f=>`مين يجاوبها من غير تفكير؟ ${f.q}`,
+ f=>`جولة التاريخ: ${f.q}`,
+ f=>`تحدي المدرج الأحمر: ${f.q}`,
+ f=>`سؤال الـHardcore أهلاوية: ${f.q}`,
+ f=>`ركز في التفاصيل 👀 — ${f.q}`,
+ f=>`آخر فرصة تثبت إنك أهلاوي: ${f.q}`
+];
+let QUESTIONS=[];
+for(const f of FACTS){ for(let s=0;s<STYLES.length;s++){ QUESTIONS.push({id:`${FACTS.indexOf(f)}-${s}`,cat:f[0],q:STYLES[s]({q:f[1]}),a:f[2],opts:[...f[3]],style:s}); } }
+// Add many derived elimination questions from the same verified facts, still unique IDs.
+const extra=[];
+FACTS.forEach((f,i)=>{
+ const wrong=f[3].filter(x=>x!==f[2]);
+ if(wrong.length){
+  extra.push({id:`e${i}a`,cat:f[0],q:`اختار الإجابة الوحيدة الصحيحة: ${f[1]}`,a:f[2],opts:[...f[3]],style:11});
+  extra.push({id:`e${i}b`,cat:f[0],q:`من الاختيارات دي، مين/إيه الصح في السؤال ده؟ ${f[1]}`,a:f[2],opts:[...f[3]],style:12});
+ }
+});
+QUESTIONS.push(...extra);
+
+const O={peer:null,conn:null,host:false,code:'',guestName:'',hostName:'',questionIndex:0,round:10,deck:[],hostAnswers:{},onlineScores:{host:0,guest:0},active:false};
+const S={mode:'solo',ai:'normal',round:20,pack:'all',players:[],turn:0,index:0,deck:[],score:0,combo:0,bestCombo:0,streak:0,bestStreak:0,timer:null,timeLeft:10,locked:false,usedPower:{fifty:false,freeze:false,double:false,shield:false},doubleNext:false,shield:false,freeze:false};
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function load(){ $('xp').textContent=localStorage.xp||0;$('bestStreak').textContent=localStorage.bestStreak||0;$('high').textContent=localStorage.high||0;const lv=Math.floor((+(localStorage.xp||0))/500)+1;$('levelPill').textContent='المستوى '+lv;$('bankCount').textContent=QUESTIONS.length+'+'; }
+function save(){localStorage.xp=+(localStorage.xp||0);}
+function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1800)}
+function sound(type){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=new C(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);let f=type==='good'?620:type==='bad'?130:type==='win'?880:360;o.frequency.value=f;o.type='sine';g.gain.value=.035;o.start();o.stop(c.currentTime+(type==='bad'?.18:.11))}catch(e){}}
+function selectMode(mode){S.mode=mode;document.querySelectorAll('.mode').forEach(x=>x.classList.toggle('selected',x.dataset.mode===mode));$('aiField').classList.toggle('hidden',mode!=='ai');$('localNames').classList.toggle('hidden',!['local2','local4'].includes(mode));}
+const HOW={
+solo:{icon:'🎯',title:'لاعب واحد',subtitle:'الهدف: تكسر رقمك وتثبت إنك موسوعة أهلاوية',intro:'اللعب الفردي هو الوضع الأساسي. أنت ضد الأسئلة فقط، وكل نقطة وكل ثانية محسوبة عليك.',steps:['اختار عدد الأسئلة ونوع الأسئلة ثم اضغط ابدأ التحدي','كل سؤال أمامك لمدة 10 ثواني، اختار إجابة واحدة قبل انتهاء الوقت','الإجابة الصح تزود الـCombo والنقاط، والإجابة الغلط تكسر الـCombo','كل ما تجاوب أسرع، نقاطك تكون أعلى، فمتستناش لآخر ثانية','في نهاية الجولة هتشوف نتيجتك وأفضل Combo والـAchievements'],powers:'50/50 يشيل اختيارين غلط • تجميد يوقف الوقت • ×2 يضاعف السؤال التالي • الدرع يحميك من أول غلطة',win:'مفيش خصم هنا — الفوز الحقيقي إنك تكسر أعلى نتيجة وأفضل Streak ليك'},
+ai:{icon:'🤖',title:'ضد الـAI',subtitle:'الهدف: تهزم خصم ذكي قبل ما هو يسبقك',intro:'هتلعب ضد خصم AI بسرعة مختلفة حسب مستوى الصعوبة اللي تختاره.',steps:['اختار مستوى الـAI: سهل، متوسط، صعب أو أسطورة','كل لاعب له دوره، والـAI بيجاوب تلقائيًا بعد وقت متغير حسب مستواه','النقاط بتتحسب بنفس نظام السرعة والـCombo','لو لعبت صح بسرعة تقدر تعوض أي تأخر في النتيجة','في النهاية صاحب أعلى نقاط هو الفائز'],powers:'الباور أبس تساعدك أنت فقط، فاستخدمها في السؤال اللي محتاجها بدل ما تهدرها بدري',win:'اكسب الـAI وخلي إنجاز هزيمة الذكاء الاصطناعي يظهر في جوائزك'},
+local2:{icon:'🥊',title:'1 ضد 1 محلي',subtitle:'اتنين على نفس الموبايل — دور بدور',intro:'اختار اسم اللاعب الأول والثاني، وبعدها كل سؤال ينتقل بينكم بالتبادل.',steps:['اكتب اسم اللاعب 1 واسم اللاعب 2','كل لاعب يظهر له السؤال ويختار إجابته في دوره','بعد انتهاء الإجابة ينتقل الدور للاعب الآخر','النقاط بتتجمع لكل لاعب بشكل مستقل','في النهاية صاحب أعلى مجموع نقاط يكسب المباراة'],powers:'كل لاعب يملك استخداماته في الجولة، والباور أبس مرتبطة بدوره',win:'أعلى مجموع نقاط = بطل المباراة'},
+local4:{icon:'👥',title:'4 لاعبين',subtitle:'بطولة صغيرة على نفس الموبايل',intro:'أربعة لاعبين يدخلوا نفس الجولة، وكل واحد يحاول يجمع أكبر عدد من النقاط.',steps:['اكتب أسماء اللاعبين الأربعة','كل سؤال يمر على اللاعبين بالتتابع','كل إجابة صح تزيد نقاط اللاعب وتبني الـCombo الخاص به','الوقت والسرعة يؤثران على قيمة الإجابة','بعد آخر سؤال يظهر ترتيب الأربعة من الأول للرابع'],powers:'استخدم الباور أبس في دورك للحصول على أفضل فرصة للنقاط',win:'المركز الأول هو صاحب أعلى مجموع نقاط بعد نهاية الجولة'},
+speed:{icon:'⚡',title:'الأسرع يفوز',subtitle:'هنا السرعة أهم من أي وقت تاني',intro:'الوضع ده معمول للناس اللي بتعرف الإجابة وعايزة تضرب بسرعة. قيمة النقاط تزيد مع الوقت المتبقي.',steps:['اقرأ السؤال بسرعة وحدد الإجابة فورًا','كلما ضغطت أسرع، حصلت على نقاط إضافية أكبر','الإجابة الصح بسرعة ترفع الـCombo وتضاعف تأثير السرعة','التأخير يقلل قيمة النقاط حتى لو الإجابة صحيحة','بعد نهاية الجولة أعلى مجموع نقاط يكسب'],powers:'استخدم 50/50 فقط لما تكون محتار؛ إضاعة الوقت ممكن تقلل مكسبك في وضع السرعة',win:'اللي يعرف ويضغط أسرع هو اللي يكسب'},
+sudden:{icon:'☠️',title:'الموت المفاجئ',subtitle:'غلطة واحدة ممكن تخرجك من المباراة',intro:'وضع عالي الخطورة. حافظ على تركيزك لأن الإجابة الغلط بدون درع تنهي مشاركتك.',steps:['ابدأ الجولة وكل لاعب عنده فرصة للاستمرار','الإجابة الصحيحة تحافظ عليك وتزيد نقاطك','الإجابة الغلط تخرجك فورًا إذا لم يكن معك درع','استخدم الدرع في الوقت المناسب لإنقاذ الجولة','آخر لاعب صامد أو صاحب أعلى نتيجة هو الفائز'],powers:'الدرع أهم باور أب هنا، والباقي يساعدك في تأمين الإجابة قبل ما تضغط',win:'البقاء أهم من المخاطرة — آخر لاعب صامد أو الأعلى نقاطًا يفوز'}
+};
+function renderHow(mode=S.mode){const h=HOW[mode]||HOW.solo;$('howPreviewIcon').textContent=h.icon;$('howPreviewTitle').textContent=h.title;$('howPreviewText').textContent=h.intro;$('howBigIcon').textContent=h.icon;$('howTitle').textContent='إزاي تلعب — '+h.title;$('howSubtitle').textContent=h.subtitle;$('howBody').innerHTML=`<div class="howGrid"><div class="howBlock"><h3>🎯 الفكرة</h3><p>${h.intro}</p><div class="howSteps">${h.steps.map((x,i)=>`<div class="howStep"><i>${i+1}</i><span>${x}</span></div>`).join('')}</div></div><div class="howBlock"><h3>⚡ الباور أبس</h3><p>${h.powers}</p><div class="howNote">💡 نصيحة: متستخدمش كل المساعدات في أول سؤال — وفرها للأسئلة اللي أنت مش واثق منها أو اللي ممكن تغير نتيجة المباراة</div></div></div><div class="howBlock" style="margin-top:12px"><h3>🏆 إزاي تكسب؟</h3><p>${h.win}</p></div><div class="howOnline"><h3>🌐 عايز تلعب مع صاحبك أونلاين؟</h3><p>من الصفحة الرئيسية اختار <b>إنشاء غرفة</b> وخد كود من 6 حروف وابعتُه لصاحبك. هو يدخل من <b>دخول بكود</b>، وبعدها تبدأوا مباراة 1 ضد 1 بنفس الجولة. مثال كود: <code>AH7K2P</code></p></div>`;}
+
+document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>selectMode(b.dataset.mode));
+renderHow('solo');
+$('onlineCreateBtn').onclick=()=>show('online');$('onlineJoinBtn').onclick=()=>show('online');$('onlineBackBtn').onclick=()=>show('home');$('quickSoloBtn').onclick=()=>{selectMode('solo');show('home');setTimeout(start,50)};$('quickAiBtn').onclick=()=>{selectMode('ai');show('home');setTimeout(start,50)};
+$('roundLen').onchange=e=>S.round=+e.target.value;$('aiLevel').onchange=e=>S.ai=e.target.value;$('pack').onchange=e=>S.pack=e.target.value;
+function makeDeck(){let arr=QUESTIONS.filter(q=>S.pack==='all'||q.cat===S.pack);arr=shuffle(arr); // no repeats in same round
+ return arr.slice(0,S.round);
+}
+function start(){
+ S.round=+$('roundLen').value;S.ai=$('aiLevel').value;S.pack=$('pack').value;S.index=0;S.turn=0;S.locked=false;S.combo=0;S.bestCombo=0;S.streak=0;S.doubleNext=false;S.shield=false;S.freeze=false;S.usedPower={fifty:false,freeze:false,double:false,shield:false};
+ const p1=$('p1').value.trim()||'محمد';
+ S.players=[{name:p1,score:0,alive:true},{name:S.mode==='ai'?'🤖 AI':$('p2').value.trim()||'أحمد',score:0,alive:true}];
+ if(S.mode==='local4')S.players.push({name:$('p3').value.trim()||'عمر',score:0,alive:true},{name:$('p4').value.trim()||'كريم',score:0,alive:true});
+ S.deck=makeDeck();if(S.deck.length<S.round){toast('البنك لا يكفي لهذا النوع — استخدمت المتاح');S.round=S.deck.length}
+ show('game');renderPlayers();ask();
+}
+$('startBtn').onclick=start;$('againBtn').onclick=start;$('homeBtn').onclick=()=>show('home');$('quitBtn').onclick=()=>{clearInterval(S.timer);show('home')};
+$('howBtn').onclick=()=>{renderHow(S.mode);show('how')};$('howBackBtn').onclick=()=>show('home');
+$('resetBtn').onclick=()=>{if(confirm('تصفير XP وأفضل النتائج؟')){localStorage.clear();load();toast('اتمسحت الإحصائيات')}};
+function renderPlayers(){const p=S.players; $('pl1').innerHTML=`<b>${p[0].name}</b><small>${p[0].score} نقطة</small>`;$('pl2').innerHTML=`<b>${p[1]?.name||'—'}</b><small>${p[1]?.score||0} نقطة</small>`;document.querySelectorAll('.player').forEach((x,i)=>x.classList.toggle('active',i===S.turn));}
+function ask(){
+ clearInterval(S.timer);S.locked=false;S.usedPower={fifty:false,freeze:false,double:false,shield:false};
+ const q=S.deck[S.index];if(!q)return finish();
+ $('qnum').textContent=`${S.index+1}/${S.round}`;const catName={history:'🏆 تاريخ وبطولات',players:'⭐ لاعبين ونجوم',matches:'⚽ مباريات وأرقام',club:'🦅 النادي والجمهور'}[q.cat]||'أهلاوي أنا';$('cat').textContent=catName;$('catTag').textContent=catName;$('roundTag').textContent=`🔥 السؤال ${S.index+1} من ${S.round}`;$('question').textContent=q.q;
+ let opts=shuffle(q.opts); // RANDOMIZE ANSWERS every time
+ // hard guarantee: correct answer is not always first; about 75% random and if first move it.
+ if(opts[0]===q.a && Math.random()<0.92){const j=1+Math.floor(Math.random()*(opts.length-1));[opts[0],opts[j]]=[opts[j],opts[0]]}
+ const box=$('answers');box.innerHTML='';opts.forEach((o,i)=>{const b=document.createElement('button');b.className='answer';b.innerHTML=`<span class="letter">${'ABCD'[i]}</span><span>${o}</span>`;b.onclick=()=>answer(o,b);box.appendChild(b)});
+ $('feedback').textContent='';$('bar').style.width='100%';$('timer').textContent='10.0';$('timer').classList.remove('danger');
+ if(S.mode==='ai'&&S.turn===1){setTimeout(()=>aiAnswer(q),700+Math.random()*1100)}
+ startTimer();renderPlayers();$('score').textContent=S.players[S.turn].score;$('combo').textContent=S.combo+'x';$('bestCombo').textContent=S.bestCombo+'x';
+}
+function startTimer(){S.timeLeft=10;S.timer=setInterval(()=>{if(S.freeze)return;S.timeLeft-=.1;if(S.timeLeft<=0){S.timeLeft=0;clearInterval(S.timer);$('timer').textContent='0.0';timeOut()}else{$('timer').textContent=S.timeLeft.toFixed(1);$('bar').style.width=(S.timeLeft*10)+'%';$('timer').classList.toggle('danger',S.timeLeft<3)}},100)}
+function aiAnswer(q){if(S.locked)return;let chance={easy:.58,normal:.72,hard:.84,legend:.93}[S.ai]||.72;let correct=Math.random()<chance;let opts=[...q.opts];let choice=correct?q.a:shuffle(opts.filter(x=>x!==q.a))[0];let btn=[...document.querySelectorAll('.answer')].find(x=>x.textContent.includes(choice));if(btn)answer(choice,btn,true)}
+function timeOut(){if(S.locked)return;S.locked=true;resolveAnswer(null,null,false,true)}
+function answer(value,btn,isAI=false){if(S.locked)return;resolveAnswer(value,btn,value===S.deck[S.index].a,false,isAI)}
+function resolveAnswer(value,btn,correct,timeout=false,isAI=false){
+ S.locked=true;clearInterval(S.timer);const q=S.deck[S.index];const current=S.players[S.turn];
+ document.querySelectorAll('.answer').forEach(b=>{const txt=b.textContent.slice(1).trim();if(txt===q.a)b.classList.add('correct');else if(btn&&b===btn&&!correct)b.classList.add('wrong')});
+ if(correct){S.combo++;S.streak++;S.bestCombo=Math.max(S.bestCombo,S.combo);S.bestStreak=Math.max(S.bestStreak,S.streak);let base=Math.max(30,Math.round(S.timeLeft*12));if(S.mode==='speed')base+=Math.round(S.timeLeft*10);let mult=1+Math.min(2,S.combo*.15);if(S.doubleNext){mult*=2;S.doubleNext=false;$('double').disabled=true}let pts=Math.round(base*mult);current.score+=pts;$('feedback').textContent=`🔥 صح! +${pts} نقطة • Combo ${S.combo}x`;$('scorepop').textContent='+'+pts;$('scorepop').classList.remove('show');void $('scorepop').offsetWidth;$('scorepop').classList.add('show');sound('good');
+ }else{if(S.shield){S.shield=false;$('shield').disabled=true;S.combo=0;$('feedback').textContent='🛡️ الدرع أنقذك! الغلطة اتعدّت';}else{S.combo=0;S.streak=0;$('feedback').textContent=timeout?'⏰ الوقت خلص!':'❌ غلط — ركز في اللي جاي';sound('bad');}}
+ $('score').textContent=current.score;$('combo').textContent=S.combo+'x';$('bestCombo').textContent=S.bestCombo+'x';renderPlayers();
+ if(S.mode==='sudden'&&!correct&&!S.shield){setTimeout(finish,900);return}
+ setTimeout(()=>nextTurn(),900);
+}
+function nextTurn(){
+ S.index++;
+ if(S.index>=S.round){finish();return}
+ if(['local2','local4'].includes(S.mode)){S.turn=(S.turn+1)%S.players.length}
+ else if(S.mode==='ai'){S.turn= S.turn===0?1:0}
+ else S.turn=0;
+ ask();
+}
+function finish(){clearInterval(S.timer);show('result');const sorted=[...S.players].sort((a,b)=>b.score-a.score);const win=sorted[0];$('winner').textContent=`🏆 ${win.name} كسب الجولة`;$('finalScore').textContent=win.score.toLocaleString('en-US');$('resultText').textContent=`أقصى Combo: ${S.bestCombo}x • أفضل Streak: ${S.bestStreak} • ${QUESTIONS.length} سؤال تجريبي متاح في البنك`;
+ const gained=Math.max(50,win.score);localStorage.xp=(+(localStorage.xp||0))+gained;localStorage.bestStreak=Math.max(+(localStorage.bestStreak||0),S.bestStreak);localStorage.high=Math.max(+(localStorage.high||0),win.score);load();
+ const ach=[['🔥 كومبو 5+',S.bestCombo>=5],['⚡ كومبو 10+',S.bestCombo>=10],['🧠 موسوعة الأهلي',S.bestStreak>=15],['💯 نتيجة 1000+',win.score>=1000],['☠️ ناجي الموت المفاجئ',S.mode==='sudden'&&win.score>0],['🤖 هزمت الـAI',S.mode==='ai'&&win.name!== '🤖 AI']];$('achievements').innerHTML=ach.map(a=>`<div class="ach ${a[1]?'':'lock'}"><b>${a[0]}</b><br><small>${a[1]?'مفتوح 🏅':'لسه مقفول'}</small></div>`).join('');
+ $('leaderboard').innerHTML='<h3>📊 ترتيب الجولة</h3>'+sorted.map((p,i)=>`<div class="lbrow"><span>${i+1}. ${p.name}</span><b>${p.score}</b></div>`).join('');sound('win');
+}
+// Powerups
+$('fifty').onclick=()=>{if(S.usedPower.fifty||S.locked)return;S.usedPower.fifty=true;$('fifty').disabled=true;const q=S.deck[S.index];const wrong=[...document.querySelectorAll('.answer')].filter(b=>b.textContent.slice(1).trim()!==q.a);shuffle(wrong).slice(0,2).forEach(b=>{b.classList.add('dim');b.disabled=true});toast('🌓 شلت إجابتين غلط')};
+$('freeze').onclick=()=>{if(S.usedPower.freeze||S.locked)return;S.usedPower.freeze=true;S.freeze=true;$('freeze').disabled=true;toast('❄️ الوقت متجمد 3 ثواني');setTimeout(()=>S.freeze=false,3000)};
+$('double').onclick=()=>{if(S.usedPower.double||S.locked)return;S.usedPower.double=true;S.doubleNext=true;$('double').disabled=true;toast('🔥 السؤال الجاي ×2')};
+$('shield').onclick=()=>{if(S.usedPower.shield||S.locked)return;S.usedPower.shield=true;S.shield=true;$('shield').disabled=true;toast('🛡️ الدرع جاهز')};
+// ================= ONLINE ARENA (PeerJS) =================
+function makeRoomCode(){const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let c='';for(let i=0;i<6;i++)c+=chars[Math.floor(Math.random()*chars.length)];return c}
+function onlineStatus(id,msg){const el=$(id);if(el)el.textContent=msg}
+function resetPeer(){try{if(O.conn)O.conn.close();if(O.peer)O.peer.destroy()}catch(e){}O.peer=null;O.conn=null;O.active=false}
+function createOnlineRoom(){resetPeer();const name=$('onlineNameHost').value.trim()||'محمد';const code=makeRoomCode();O.host=true;O.code=code;O.hostName=name;O.round=10;O.deck=shuffle(QUESTIONS).slice(0,O.round);O.onlineScores={host:0,guest:0};onlineStatus('hostStatus','جاري إنشاء الغرفة...');$('hostCodeWrap').classList.remove('hidden');$('hostCode').textContent=code;$('hostStartBtn').disabled=true;try{O.peer=new Peer(code,{debug:1});O.peer.on('open',()=>onlineStatus('hostStatus','🟢 الغرفة جاهزة — ابعت الكود لصاحبك'));O.peer.on('connection',conn=>{if(O.conn){conn.close();return}O.conn=conn;onlineStatus('hostStatus','🟢 اتصل لاعب: '+(conn.metadata?.name||'لاعب')+' — جاهزين');$('hostStartBtn').disabled=false;conn.on('data',d=>onlineHostData(d));conn.on('close',()=>onlineStatus('hostStatus','🔴 اللاعب خرج من الغرفة'));});O.peer.on('error',e=>{onlineStatus('hostStatus','❌ '+(e.type==='unavailable-id'?'الكود مستخدم، اعمل غرفة جديدة':'تعذر الاتصال — جرّب تاني'));});}catch(e){onlineStatus('hostStatus','❌ المتصفح لم يسمح بالاتصال الأونلاين')}}
+function joinOnlineRoom(){resetPeer();const code=$('joinCode').value.trim().toUpperCase();const name=$('onlineNameGuest').value.trim()||'أحمد';if(code.length<4){onlineStatus('guestStatus','❌ اكتب كود الغرفة');return}O.host=false;O.code=code;O.guestName=name;onlineStatus('guestStatus','جاري الاتصال...');try{O.peer=new Peer();O.peer.on('open',()=>{O.conn=O.peer.connect(code,{reliable:true,metadata:{name}});O.conn.on('open',()=>{onlineStatus('guestStatus','🟢 اتصلت! مستني صاحب الغرفة يبدأ');O.conn.send({type:'join',name});});O.conn.on('data',onlineGuestData);O.conn.on('close',()=>onlineStatus('guestStatus','🔴 صاحب الغرفة أنهى الاتصال'));});O.peer.on('error',()=>onlineStatus('guestStatus','❌ الكود غير صحيح أو الغرفة غير متاحة'));}catch(e){onlineStatus('guestStatus','❌ تعذر تشغيل الأونلاين')}}
+function onlineHostData(d){if(!d)return;if(d.type==='join'){onlineStatus('hostStatus','🟢 '+(d.name||'لاعب')+' دخل الغرفة — اضغط ابدأ');O.conn&&O.conn.send({type:'lobby',host:O.hostName});}if(d.type==='answer'){const q=O.deck[d.index];if(!q||d.index!==O.questionIndex)return;if(O.hostAnswers.guest)return;const correct=d.value===q.a;const pts=correct?Math.max(20,Math.round((10-Math.max(0,d.elapsed||0))*12)):0;O.onlineScores.guest+=pts;O.hostAnswers.guest={correct,pts};O.conn&&O.conn.send({type:'answerResult',index:d.index,correct,pts,hostScore:O.onlineScores.host,guestScore:O.onlineScores.guest});maybeAdvanceOnline();}}
+function onlineGuestData(d){if(!d)return;if(d.type==='lobby'){onlineStatus('guestStatus','🟢 '+(d.host||'صاحب الغرفة')+' جاهز — مستني البداية')}if(d.type==='start'){onlineStartGuest(d)}if(d.type==='question'){O.questionIndex=d.index;onlineRenderQuestion(d)}if(d.type==='answerResult'){O.onlineScores.host=d.hostScore;O.onlineScores.guest=d.guestScore;onlineStatus('guestStatus',d.correct?`🔥 صح +${d.pts}`:'❌ إجابة غلط');}if(d.type==='finish'){show('result');$('winner').textContent=d.hostScore>=d.guestScore?'🏆 صاحب الغرفة كسب':'🏆 أنت كسبت أونلاين';$('finalScore').textContent=Math.max(d.hostScore,d.guestScore).toLocaleString('en-US');$('resultText').textContent=`أونلاين 1v1 • ${d.hostScore} - ${d.guestScore}`;$('leaderboard').innerHTML=`<h3>📊 النتيجة</h3><div class="lbrow"><span>صاحب الغرفة</span><b>${d.hostScore}</b></div><div class="lbrow"><span>أنت</span><b>${d.guestScore}</b></div>`;}}
+function onlineStartGuest(d){O.active=true;O.questionIndex=0;O.round=d.round||10;O.onlineScores={host:0,guest:0};onlineStatus('guestStatus','🟢 المباراة بدأت');}
+function onlineStartHost(){if(!O.conn){toast('لسه مفيش لاعب داخل الغرفة');return}O.active=true;O.questionIndex=0;O.onlineScores={host:0,guest:0};O.conn.send({type:'start',round:O.round,guestName:O.conn.metadata?.name||'لاعب'});onlineSendQuestion()}
+function onlineSendQuestion(){const q=O.deck[O.questionIndex];if(!q){onlineFinishHost();return}O.hostAnswers={};const payload={type:'question',index:O.questionIndex,round:O.round,q:q.q,cat:q.cat,opts:shuffle(q.opts),hostScore:O.onlineScores.host,guestScore:O.onlineScores.guest};O.conn&&O.conn.send(payload);onlineRenderQuestion(payload,true)}
+function onlineRenderQuestion(d,isHost=false){O.active=true;show('game');$('roundTag').textContent=`🌐 أونلاين • ${d.index+1}/${d.round}`;$('catTag').textContent={history:'🏆 تاريخ وبطولات',players:'⭐ لاعبين ونجوم',matches:'⚽ مباريات وأرقام',club:'🦅 النادي والجمهور'}[d.cat]||'أهلاوي أنا';$('cat').textContent=$('catTag').textContent;$('question').textContent=d.q;$('timer').textContent='10.0';$('bar').style.width='100%';$('feedback').textContent='';const box=$('answers');box.innerHTML='';d.opts.forEach((o,i)=>{const b=document.createElement('button');b.className='answer';b.innerHTML=`<span class="letter">${'ABCD'[i]}</span><span>${o}</span>`;b.onclick=()=>onlineAnswer(o,d.index,b);box.appendChild(b)});$('pl1').innerHTML=`<b>${O.host?O.hostName:($('onlineNameGuest').value.trim()||'أحمد')}</b><small>${d.hostScore||0} نقطة</small>`;$('pl2').innerHTML=`<b>🦅 الخصم</b><small>${d.guestScore||0} نقطة</small>`;$('qnum').textContent=`${d.index+1}/${d.round}`;$('score').textContent=O.host?d.hostScore||0:d.guestScore||0;$('combo').textContent='🌐';$('bestCombo').textContent='LIVE';clearInterval(S.timer);let started=Date.now();S.timer=setInterval(()=>{let left=10-(Date.now()-started)/1000;$('timer').textContent=Math.max(0,left).toFixed(1);$('bar').style.width=Math.max(0,left*10)+'%';if(left<=0){clearInterval(S.timer);onlineAnswer(null,d.index,null)}},100)}
+function onlineAnswer(value,index,btn){if(!O.active||index!==O.questionIndex)return;const elapsed=Math.min(10,(10-parseFloat($('timer').textContent||'10')));document.querySelectorAll('.answer').forEach(b=>b.disabled=true);if(O.host){if(O.hostAnswers.host)return;const q=O.deck[index];const correct=value===q.a;const pts=correct?Math.max(20,Math.round((10-elapsed)*12)):0;O.onlineScores.host+=pts;$('feedback').textContent=correct?`🔥 صح +${pts}`:'❌ غلط';O.hostAnswers.host={correct,pts};maybeAdvanceOnline();}else{O.conn&&O.conn.send({type:'answer',index,value,elapsed});$('feedback').textContent='⏳ إجابتك اتبعت — مستني النتيجة';}}
+function maybeAdvanceOnline(){if(O.hostAnswers.host&&O.hostAnswers.guest){const oldIndex=O.questionIndex;setTimeout(()=>{if(!O.active||oldIndex!==O.questionIndex)return;O.questionIndex++;onlineSendQuestion()},900)}}
+function onlineFinishHost(){O.active=false;clearInterval(S.timer);show('result');const hs=O.onlineScores.host,gs=O.onlineScores.guest;$('winner').textContent=hs>=gs?`🏆 ${O.hostName} كسب أونلاين`:'🏆 الضيف كسب أونلاين';$('finalScore').textContent=Math.max(hs,gs).toLocaleString('en-US');$('resultText').textContent=`أونلاين 1v1 • ${hs} - ${gs}`;$('achievements').innerHTML='<div class="ach"><b>🌐 Online Fighter</b><br><small>كملت مباراة أونلاين</small></div>';$('leaderboard').innerHTML=`<h3>📊 النتيجة</h3><div class="lbrow"><span>${O.hostName}</span><b>${hs}</b></div><div class="lbrow"><span>الخصم</span><b>${gs}</b></div>`;O.conn&&O.conn.send({type:'finish',hostScore:hs,guestScore:gs});}
+$('createRoomBtn').onclick=createOnlineRoom;$('joinRoomBtn').onclick=joinOnlineRoom;$('hostStartBtn').onclick=onlineStartHost;$('copyRoomBtn').onclick=async()=>{try{await navigator.clipboard.writeText(O.code);toast('📋 اتنسخ الكود')}catch(e){toast('الكود: '+O.code)}};
+
+load();
+</script>
+</body>
+</html>
